@@ -1,0 +1,22 @@
+{
+  "name": "y",
+  "version": "0.0.1",
+  "description": "Showcasing serverless wink functions",
+  "main": "api/index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/winkjs/showcase-serverless.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/winkjs/showcase-serverless/issues"
+  },
+  "homepage": "https://github.com/winkjs/showcase-serverless#readme",
+  "dependencies": {
+    "wink-pos-tagger": "^2.2.2"
+  }
+}
