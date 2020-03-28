@@ -8,4 +8,4 @@ Deploy your own serverless [wink POS tagger](https://github.com/winkjs/wink-pos-
 
 [![Deploy with ZEIT Now](https://zeit.co/button)](https://zeit.co/import/project?template=https://github.com/winkjs/showcase-serverless/tree/master)
 
-_Live Example: https://showcase-serverless.winkjs.now.sh/api/wink-pos-tagger?sentence=This is a test_
+_Live Example: https://showcase-serverless.winkjs.now.sh/api/wink-pos-tagger?sentence=This%20is%20a%20test_
