@@ -14,20 +14,22 @@ var client = new Twitter({
 module.exports = (req, res) => {
   var hashtag = '#' + req.query.hashtag;
 
-  client.get('search/tweets', {q: hashtag}, function(error, tweets, response) {
-    var s = tweets.statuses.map((tweet) => {
-      var tweetSentiment = sentiment(tweet.text);
-      return {
-        tweet: tweet.text,
-        user: tweet.user.name,
-        sentimentScore: tweetSentiment.score,
-        normalizedSentimentScore: tweetSentiment.normalizedScore,
-      }
-     });
-     res.json({
-       hashtag: hashtag,
-       tweets: s
-     })
-     console.log(s);
+  client.get(
+    'search/tweets',
+    {q: hashtag, include_entities: false, lang: 'en'},
+    function(error, tweets, response) {
+      var s = tweets.statuses.map((tweet) => {
+        var tweetSentiment = sentiment(tweet.text);
+        return {
+          tweet: tweet.text,
+          user: tweet.user.name,
+          sentimentScore: tweetSentiment.score,
+          normalizedSentimentScore: tweetSentiment.normalizedScore,
+        }
+      });
+      res.json({
+        hashtag: hashtag,
+        tweets: s
+      })
   });
 }
