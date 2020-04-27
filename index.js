@@ -1,3 +1,25 @@
+// Server
+const express = require('express')
+const cors = require('cors')
+const app = express()
+
+app.use(cors())
+
+app.get('/', function (req, res, next) {
+  res.json({msg: 'Hello! See https://github.com/winkjs/showcase-serverless#serverless-demo for details.'})
+})
+
+// Tagger
+const tagger = require('wink-pos-tagger')();
+
+app.get('/pos-tagger', function (req, res) {
+  res.json({
+    sentence: req.query.sentence,
+    tags: tagger.tagSentence(req.query.sentence)
+  })
+})
+
+// Twitter sentiment
 const Twitter = require('twitter');
 const sentiment = require( 'wink-sentiment' );
 require('dotenv').config()
@@ -11,7 +33,7 @@ var client = new Twitter({
   bearer_token: process.env.TWITTER_BEARER_TOKEN
 });
 
-module.exports = (req, res) => {
+app.get('/twitter-sentiment', function (req, res) {
   var hashtag = '#' + req.query.hashtag;
 
   client.get(
@@ -32,4 +54,6 @@ module.exports = (req, res) => {
         tweets: s
       })
   });
-}
+});
+
+app.listen(80);

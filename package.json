@@ -17,7 +17,9 @@
   },
   "homepage": "https://github.com/winkjs/showcase-serverless#readme",
   "dependencies": {
+    "cors": "^2.8.5",
     "dotenv": "^8.2.0",
+    "express": "^4.17.1",
     "twitter": "^1.7.1",
     "wink-pos-tagger": "^2.2.2",
     "wink-sentiment": "^5.0.2"
