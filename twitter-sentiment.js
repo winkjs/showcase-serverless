@@ -23,6 +23,7 @@ module.exports = (req, res) => {
         return {
           tweet: tweet.text,
           user: tweet.user.name,
+          avatar: tweet.user.profile_image_url,
           sentimentScore: tweetSentiment.score,
           normalizedSentimentScore: tweetSentiment.normalizedScore,
         }
