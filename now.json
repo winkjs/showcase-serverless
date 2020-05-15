@@ -16,6 +16,11 @@
       "src": "/twitter-sentiment",
       "dest": "/index.js",
       "methods": ["GET"]
+    },
+    {
+      "src": "/wp-timeline",
+      "dest": "/index.js",
+      "methods": ["GET"]
     }
   ]
 }
