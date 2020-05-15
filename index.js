@@ -15,4 +15,8 @@ app.get('/pos-tagger', tagger);
 const sentiment = require('./twitter-sentiment');
 app.get('/twitter-sentiment', sentiment);
 
+const timeline = require('./wp-timeline');
+app.get('/wp-timeline', timeline);
+console.log(timeline);
+
 app.listen(80);
