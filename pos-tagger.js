@@ -10,6 +10,6 @@ module.exports = (req, res) => {
   var doc = nlp.readDoc(req.query.sentence);
   res.json({
     sentence: req.query.sentence,
-    tags: doc.tokens().out(its.type)
+    tags: doc.tokens().out(its.pos)
   })
 }
