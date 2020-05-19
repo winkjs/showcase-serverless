@@ -19,4 +19,4 @@ const timeline = require('./wp-timeline');
 app.get('/wp-timeline', timeline);
 console.log(timeline);
 
-app.listen(80);
+app.listen(process.env.PORT);
