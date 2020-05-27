@@ -1,5 +1,8 @@
 const Twitter = require('twitter');
-const sentiment = require( 'wink-sentiment' );
+const winkNLP = require('wink-nlp');
+const its = require( 'wink-nlp/src/its.js' );
+const model = require('wink-eng-lite-model');
+const nlp = winkNLP(model);
 require('dotenv').config()
 
 // Config (from .env file)
@@ -19,13 +22,13 @@ module.exports = (req, res) => {
     {q: hashtag, include_entities: false, lang: 'en'},
     function(error, tweets, response) {
       var s = tweets.statuses.map((tweet) => {
-        var tweetSentiment = sentiment(tweet.text);
+        var tweetSentiment = nlp.readDoc(tweet.text).out(its.sentiment);
+
         return {
           tweet: tweet.text,
           user: tweet.user.name,
           avatar: tweet.user.profile_image_url,
-          sentimentScore: tweetSentiment.score,
-          normalizedSentimentScore: tweetSentiment.normalizedScore,
+          sentiment: tweetSentiment,
         }
       });
 
