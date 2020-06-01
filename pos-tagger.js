@@ -6,7 +6,7 @@ const model = require('wink-eng-lite-model');
 const nlp = winkNLP(model);
 
 module.exports = (req, res) => {
-  var doc = nlp.readDoc(req.query.sentence);
+  var doc = nlp.readDoc(req.body.sentence);
 
   // Entities
   var entities = doc.entities().out(its.detail);
