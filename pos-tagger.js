@@ -1,4 +1,3 @@
-const tagger = require('wink-pos-tagger')();
 const winkNLP = require('wink-nlp');
 const its = require( 'wink-nlp/src/its.js' );
 const as = require( 'wink-nlp/src/as.js' );
