@@ -23,7 +23,7 @@
     "express": "^4.17.1",
     "node-fetch": "^2.6.0",
     "twitter": "^1.7.1",
-    "wink-eng-lite-model": "https://github.com/winkjs/wink-eng-lite-model/releases/download/1.0.0/wink-eng-lite-model-1.0.0.tgz",
-    "wink-nlp": "^1.0.0"
+    "wink-eng-lite-model": "https://github.com/winkjs/wink-eng-lite-model/releases/download/1.1.0/wink-eng-lite-model-1.1.0.tgz",
+    "wink-nlp": "^1.1.0"
   }
 }
