@@ -37,9 +37,6 @@ module.exports = (req, res) => {
   var wordFreq = doc.tokens().filter((token) => {
     return token.out(its.type) === 'word' && !token.out(its.stopWordFlag);
   }).out(its.normal, as.freqTable);
-  wordFreq = wordFreq.sort(function (a, b) {
-    return b[1] - a[1];
-  })
   wordFreq = wordFreq.slice(0, 5)
 
   // Sentiment
