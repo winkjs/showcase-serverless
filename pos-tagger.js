@@ -61,6 +61,6 @@ module.exports = (req, res) => {
       words
     },
     wordFreq,
-    taggedText: doc.out(its.markedUpText).replace(/\r/g, '<br>')
+    taggedText: doc.out(its.markedUpText).replace(/\n/g, '<br>')
   })
 }
