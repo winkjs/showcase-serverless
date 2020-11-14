@@ -23,11 +23,13 @@ module.exports = (req, res) => {
     var entity = token.parentEntity();
     if (entity === undefined) {
       if (token.out(its.type) === 'word') {
-        token.markup('<span class=\"tag '+ token.out(its.pos) +'\">','</span>');
+        token.markup('<spanclass=\"tag '+ token.out(its.pos) +'\">','</span>');
+        // This will be replaced later with "span class" after spaces are replaced
       }
     } else {
       if (!seenEntities.has(entity.index())) {
-        entity.markup('<span class=\"tag '+ entity.out(its.type) +'\">', "</span>");
+        entity.markup('<spanclass=\"tag '+ entity.out(its.type) +'\">', "</span>");
+        // This will be replaced later with "span class" after spaces are replaced
       }
       seenEntities.add(entity.index());
     }
@@ -58,6 +60,9 @@ module.exports = (req, res) => {
       words
     },
     wordFreq,
-    taggedText: doc.out(its.markedUpText).replace(/\n/g, '<br>').replace( ' ', '&nbsp;' )
+    taggedText: doc.out(its.markedUpText)
+      .replace(/\n/g, '<br>')
+      .replace( / /g, '&nbsp;' )
+      .replace(/spanclass/g, 'span class')
   })
 }
