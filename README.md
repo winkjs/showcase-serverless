@@ -1,6 +1,6 @@
 # Serverless demo
 
-A demo of how to use wink with [Vercel's serverless functions](https://zeit.co/docs/v2/serverless-functions/introduction). Currently it implements the following functions:
+Demo of how to use wink with [Vercel's serverless functions](https://zeit.co/docs/v2/serverless-functions/introduction). Currently it implements the following functions:
 
 * [wink-pos-tagger](https://showcase-serverless.winkjs.now.sh/pos-tagger?sentence=He%20is%20trying%20to%20fish%20for%20fish%20in%20the%20lake.)
 * [wink-sentiment](https://showcase-serverless.now.sh/twitter-sentiment?hashtag=gamedev)
